@@ -45,7 +45,7 @@ outputs:
 
 templates:
     imports:
-      import funcube
+      from gnuradio import funcube
 
     make: |-
         funcube.fcdpp(${device_name}, ${unit})

@@ -45,7 +45,7 @@ asserts:
 - ${ (iq_gain >= -1.0) and (iq_gain <= 1.0) }
 
 templates:
-    imports: import funcube
+    imports: from gnuradio import funcube
     make: |-
         funcube.fcd_control()
         % if lna != '20.0' :

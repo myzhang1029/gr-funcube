@@ -38,6 +38,23 @@ void bind_fcdpp_control(py::module& m)
 
         .def(py::init(&fcdpp_control::make), D(fcdpp_control, make))
 
+        .def("set_freq",&fcdpp_control::set_freq,
+            py::arg("freq"),
+            D(fcdpp_control,set_freq)
+        )
 
-        ;
+        .def("set_lna",&fcdpp_control::set_lna,
+            py::arg("gain"),
+            D(fcdpp_control,set_lna)
+        )
+
+        .def("set_mixer_gain",&fcdpp_control::set_mixer_gain,
+            py::arg("gain"),
+            D(fcdpp_control,set_mixer_gain)
+        )
+
+        .def("set_if_gain",&fcdpp_control::set_if_gain,
+            py::arg("gain"),
+            D(fcdpp_control,set_if_gain)
+        );
 }

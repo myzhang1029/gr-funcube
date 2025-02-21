@@ -15,7 +15,32 @@
  */
 
 
-static const char* __doc_gr_funcube_fcd = R"doc()doc";
+
+ static const char *__doc_gr_funcube_fcd = R"doc()doc";
 
 
-static const char* __doc_gr_funcube_fcd_make = R"doc()doc";
+ static const char *__doc_gr_funcube_fcd_fcd_0 = R"doc()doc";
+
+
+ static const char *__doc_gr_funcube_fcd_fcd_1 = R"doc()doc";
+
+
+ static const char *__doc_gr_funcube_fcd_make = R"doc()doc";
+
+
+ static const char *__doc_gr_funcube_fcd_set_freq = R"doc()doc";
+
+
+ static const char *__doc_gr_funcube_fcd_set_lna_gain = R"doc()doc";
+
+
+ static const char *__doc_gr_funcube_fcd_set_mixer_gain = R"doc()doc";
+
+
+ static const char *__doc_gr_funcube_fcd_set_freq_corr = R"doc()doc";
+
+
+ static const char *__doc_gr_funcube_fcd_set_dc_corr = R"doc()doc";
+
+
+ static const char *__doc_gr_funcube_fcd_set_iq_corr = R"doc()doc";

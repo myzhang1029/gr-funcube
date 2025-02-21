@@ -24,8 +24,8 @@ list(APPEND funcube_python_files
     fcdpp_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(funcube 
-   ../..
+   ../../..
    gr::funcube
    "${funcube_python_files}")
 
-install(TARGETS funcube_python DESTINATION ${GR_PYTHON_DIR}/funcube COMPONENT pythonapi)
+install(TARGETS funcube_python DESTINATION ${GR_PYTHON_DIR}/gnuradio/funcube COMPONENT pythonapi)

@@ -33,7 +33,7 @@ void bind_fcdpp(py::module& m)
     using fcdpp = gr::funcube::fcdpp;
 
 
-    py::class_<fcdpp, gr::block, gr::basic_block, std::shared_ptr<fcdpp>>(
+    py::class_<fcdpp, gr::hier_block2, std::shared_ptr<fcdpp>>(
         m, "fcdpp", D(fcdpp))
 
         .def(py::init(&fcdpp::make),
@@ -41,6 +41,28 @@ void bind_fcdpp(py::module& m)
              py::arg("unit") = 1,
              D(fcdpp, make))
 
+        .def("set_freq",&fcdpp::set_freq,
+            py::arg("freq"),
+            D(fcdpp,set_freq)
+        )
 
-        ;
+        .def("set_lna",&fcdpp::set_lna,
+            py::arg("gain"),
+            D(fcdpp,set_lna)
+        )
+
+        .def("set_mixer_gain",&fcdpp::set_mixer_gain,
+            py::arg("gain"),
+            D(fcdpp,set_mixer_gain)
+        )
+
+        .def("set_freq_corr",&fcdpp::set_freq_corr,
+            py::arg("ppm"),
+            D(fcdpp,set_freq_corr)
+        )
+
+        .def("set_if_gain",&fcdpp::set_if_gain,
+            py::arg("gain"),
+            D(fcdpp,set_if_gain)
+        );
 }

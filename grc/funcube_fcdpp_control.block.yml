@@ -27,7 +27,7 @@ inputs:
 
 templates:
     imports: 
-        import funcube
+        from gnuradio import funcube
     make: |-
         funcube.fcdpp_control()
         self.${id}.set_lna(${lnaswitch})

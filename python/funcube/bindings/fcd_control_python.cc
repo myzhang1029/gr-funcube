@@ -38,6 +38,30 @@ void bind_fcd_control(py::module& m)
 
         .def(py::init(&fcd_control::make), D(fcd_control, make))
 
+        .def("set_freq",&fcd_control::set_freq,
+            py::arg("freq"),
+            D(fcd_control,set_freq)
+        )
 
-        ;
+        .def("set_lna_gain",&fcd_control::set_lna_gain,
+            py::arg("gain"),
+            D(fcd_control,set_lna_gain)
+        )
+
+        .def("set_mixer_gain",&fcd_control::set_mixer_gain,
+            py::arg("gain"),
+            D(fcd_control,set_mixer_gain)
+        )
+
+        .def("set_dc_corr",&fcd_control::set_dc_corr,
+            py::arg("_dci"),
+            py::arg("_dcq"),
+            D(fcd_control,set_dc_corr)
+        )
+
+        .def("set_iq_corr",&fcd_control::set_iq_corr,
+            py::arg("_gain"),
+            py::arg("_phase"),
+            D(fcd_control,set_iq_corr)
+        );
 }
