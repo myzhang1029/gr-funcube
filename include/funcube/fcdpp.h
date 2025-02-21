@@ -18,7 +18,7 @@ namespace funcube {
  * \brief Funcube Pro+ Dongle source block.
  *
  * This class provides a source block for the Funcube Pro+ Dongle by wrapping the
- * alsa audio interface and the USB control interface of the Funcube Dongle
+ * audio interface and the USB control interface of the Funcube Dongle
  * into one convenient source block.
  * The hadware audio device is autodetected by the card name. If more than one Pro+ are
  * connected it takes the first card.

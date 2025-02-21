@@ -81,7 +81,7 @@ string(REPLACE "\n" " \\n" COMPILER_INFO ${COMPILER_INFO})
 ########################################################################
 # Find funcube dependencies
 ########################################################################
-if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" )
     find_package(USB)
     if(NOT LIBUSB_FOUND)
         message(FATAL_ERROR "libusb required to compile funcube modules")

@@ -8,8 +8,8 @@ copyright_owner:
   - Volker Schroer
 dependencies:
   - gnuradio (>= 3.9.0 )
-  - alsa usb drivers activated
-  - hidapi-libusb
+  - libhidapi
+  - libusb
 repo: https://github.com/dl1ksv/gr-funcube.git
 ---
 gr-funcube is an linux and OSX addon for gnuradio to implement a funcube dongle pro+ source.

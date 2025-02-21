@@ -79,10 +79,10 @@ fcdpp_impl::fcdpp_impl(const std::string user_device_name, int unit)
             }
             cards.close();
             if (device_name.empty()) {
-                throw std::runtime_error("No FunCube Dongle  V2.0 found.");
+                throw std::runtime_error("No FunCube Dongle V2.0 found via /proc/asound/cards");
             }
         } else {
-            throw std::runtime_error("Alsa not found.");
+            throw std::runtime_error("Invalid name and unable to check via /proc/asound/cards");
         }
         /* Audio source; sample rate fixed at 192kHz */
         fcd = gr::audio::source::make(192000, device_name, true);
