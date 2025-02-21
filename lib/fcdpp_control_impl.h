@@ -28,7 +28,7 @@ public:
     void set_freq(double freq) override;
     void set_lna(int gain) override;
     void set_mixer_gain(int gain) override;
-    void set_if_gain(int gain);
+    void set_if_gain(int gain) override;
     void set_frequency_msg(pmt::pmt_t msg);
 };
 
