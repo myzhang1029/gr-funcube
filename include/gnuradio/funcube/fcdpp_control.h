@@ -9,7 +9,7 @@
 #define INCLUDED_FUNCUBE_FCDPP_CONTROL_H
 
 #include <gnuradio/block.h>
-#include <funcube/api.h>
+#include <gnuradio/funcube/api.h>
 
 namespace gr {
 namespace funcube {

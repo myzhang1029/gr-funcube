@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-#include <funcube/fcd.h>
+#include <gnuradio/funcube/fcd.h>
 #include <gnuradio/attributes.h>
 #include <boost/test/unit_test.hpp>
 

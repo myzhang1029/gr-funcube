@@ -9,7 +9,7 @@
 #define INCLUDED_FUNCUBE_FCDPP_CONTROL_IMPL_H
 
 #include "hidapi/hidapi.h"
-#include <funcube/fcdpp_control.h>
+#include <gnuradio/funcube/fcdpp_control.h>
 
 namespace gr {
 namespace funcube {

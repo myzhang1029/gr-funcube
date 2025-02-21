@@ -5,34 +5,43 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-#ifndef INCLUDED_FUNCUBE_FCD_CONTROL_H
-#define INCLUDED_FUNCUBE_FCD_CONTROL_H
+#ifndef INCLUDED_FUNCUBE_FCD_H
+#define INCLUDED_FUNCUBE_FCD_H
 
-#include <gnuradio/block.h>
-#include <funcube/api.h>
+#include <gnuradio/hier_block2.h>
+#include <gnuradio/funcube/api.h>
 
 namespace gr {
 namespace funcube {
 
 /*!
- * \brief <+description of block+>
+ * \brief Funcube Dongle source block.
  * \ingroup funcube
  *
+ * \details
+ * This class provides a Funcube Dongle source block by wrapping
+ * the USB audio interface and the USB HID control interface of
+ * the Funcube Dongle into one convenient source block.
+ *
+ * The Funcube Dongle needs to have firmware 18f or later for the
+ * control interface to work properly. As of early 2011, FCDs
+ * still come with firmware 18b. You can use qthid 2.2 (not 3) to
+ * upgrade the firmware: http://qthid.sf.net
  */
-class FUNCUBE_API fcd_control : virtual public gr::block
+class FUNCUBE_API fcd : virtual public gr::hier_block2
 {
 public:
-    typedef std::shared_ptr<fcd_control> sptr;
+    typedef std::shared_ptr<fcd> sptr;
 
     /*!
-     * \brief Return a shared_ptr to a new instance of funcube::fcd_control.
+     * \brief Return a shared_ptr to a new instance of funcube::fcd.
      *
-     * To avoid accidental use of raw pointers, funcube::fcd_control's
+     * To avoid accidental use of raw pointers, funcube::fcd's
      * constructor is in a private implementation
-     * class. funcube::fcd_control::make is the public interface for
+     * class. funcube::fcd::make is the public interface for
      * creating new instances.
      */
-    static sptr make();
+    static sptr make(const std::string device_name = "");
     /*! \brief Set frequency with Hz resolution.
      *  \param freq The frequency in Hz
      *
@@ -41,6 +50,7 @@ public:
      *
      */
     virtual void set_freq(double freq) = 0;
+
 
     /*! \brief Set LNA gain.
      *  \param gain The new gain in dB.
@@ -67,6 +77,17 @@ public:
      */
     virtual void set_mixer_gain(float gain) = 0;
 
+    /*! \brief Set new frequency correction.
+     *  \param ppm The new frequency correction in parts per million
+     *
+     * Version 1.1 FCDs (S/N 810 or later) need a correction of -12
+     * ppm.  Earlier FCDs need roughly -120 ppm (default for
+     * gr-fcd).
+     *
+     * Ref: http://www.funcubedongle.com/?p=617
+     */
+    virtual void set_freq_corr(double ppm) = 0;
+
     /*! \brief Set DC offset correction.
      *  \param _dci DC correction for I component (-1.0 to 1.0)
      *  \param _dcq DC correction for Q component (-1.0 to 1.0)
@@ -88,4 +109,4 @@ public:
 } // namespace funcube
 } // namespace gr
 
-#endif /* INCLUDED_FUNCUBE_FCD_CONTROL_H */
+#endif /* INCLUDED_FUNCUBE_FCD_H */

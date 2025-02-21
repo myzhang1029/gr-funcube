@@ -172,10 +172,10 @@ add_custom_target(uninstall
 ########################################################################
 # Add subdirectories
 ########################################################################
-add_subdirectory(include/funcube)
+add_subdirectory(include/gnuradio/funcube)
 add_subdirectory(lib)
 add_subdirectory(docs)
-add_subdirectory(python)
+add_subdirectory(python/funcube)
 add_subdirectory(grc)
 
 ########################################################################

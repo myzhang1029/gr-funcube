@@ -11,8 +11,8 @@
 #include <gnuradio/audio/source.h>
 #include <gnuradio/logger.h>
 #include <gnuradio/prefs.h>
-#include <funcube/fcd.h>
-#include <funcube/fcd_control.h>
+#include <gnuradio/funcube/fcd.h>
+#include <gnuradio/funcube/fcd_control.h>
 namespace gr {
 namespace funcube {
 

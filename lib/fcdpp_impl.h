@@ -11,8 +11,8 @@
 #include <gnuradio/audio/source.h>
 #include <gnuradio/logger.h>
 #include <gnuradio/prefs.h>
-#include <funcube/fcdpp.h>
-#include <funcube/fcdpp_control.h>
+#include <gnuradio/funcube/fcdpp.h>
+#include <gnuradio/funcube/fcdpp_control.h>
 
 
 namespace gr {

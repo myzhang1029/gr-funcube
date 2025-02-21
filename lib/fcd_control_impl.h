@@ -8,7 +8,7 @@
 #ifndef INCLUDED_FUNCUBE_FCD_CONTROL_IMPL_H
 #define INCLUDED_FUNCUBE_FCD_CONTROL_IMPL_H
 
-#include <funcube/fcd_control.h>
+#include <gnuradio/funcube/fcd_control.h>
 
 #include "hidapi/hidapi.h"
 
